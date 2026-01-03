@@ -1,0 +1,25 @@
+Field Type:
+    - Fixed
+    - Variable 
+    - Compact
+        - Prepended with a size byte 
+        - Byte size decoding
+            - byte size <= 00-FC (0-252)    -> 1 byte  (num)
+            - byte size == FD (253)         -> 2 bytes (prefix+num)
+            - byte size == FE (254)         -> 4 bytes (prefix+num)
+            - byte size == FF (255)         -> 8 bytes (prefix+num)
+
+Bitcoin Core Networks
+    - Mainnet
+        - Public production network  
+    - Testnet
+        - Public preproduction testing (qa) network
+    - Regnet
+        - Private development and local testing network
+
+Endianess:
+    - The order of bytes
+    - Big Endianess
+        - Forward order of bytes
+    - Little Endianess
+        - Reverse order of bytes

@@ -1,0 +1,21 @@
+Get Blockchain Info
+
+- Information about a node and network it is part of
+
+Fields:
+- chain: name of the network 
+- blocks: number if fully validated blocks on the node
+- headers: 
+- bestblockhash
+- getblockchaininfo
+- difficulty
+- time
+- mediantime
+- verificationprogress 
+- initialblockdownload: 
+    - boolean 
+    - indicates whether the node is still syncing from scratch 
+- chainwork:
+- pruned:
+- warnings:
+- 

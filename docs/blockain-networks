@@ -1,0 +1,14 @@
+Blockchain Networks 
+
+1. MainNet (Production)
+    - Public bitcoin network
+    - Production version of the Bitcoin Core network
+    - Real bitcoins with real value
+2. TestNet (Preproduction)
+    - Public Bitcoin network
+    - Test version of Bitcoin Core network
+    - Test bitcoins with no real value 
+3. Regtest (Development)
+    - Private local network
+    - Fully controlled by the host node 
+    - Fake bitcoins 
