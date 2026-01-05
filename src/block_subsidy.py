@@ -1,4 +1,13 @@
 def get_block_subsidy(block_height):
+    """Takes the height of a blockchain block and returns the block subsidy (rewaed) in satoshis.
+    
+    Arguments:
+        - block_subsidy (int): the block height (genesis block is at height zero). 
+
+    Returns: 
+        - subsidy (float): the block subsidy in satoshis.
+        
+    """
     INITIAL_BLOCK_SUBSIDY = 5000000000 # Set buy Satoshi
     HALVING_INTERVAL = 210000 # Height (block number - zero indexed)
 
