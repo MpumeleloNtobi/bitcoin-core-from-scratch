@@ -9,7 +9,7 @@ def get_block_subsidy(block_height):
         
     """
 
-    INITIAL_BLOCK_SUBSIDY = 5000000000 # Set buy Satoshi
+    INITIAL_BLOCK_SUBSIDY = 5000000000 # Set by Satoshi
     HALVING_INTERVAL = 210000 # Height (block number - zero indexed)
 
     if block_height < 0:
