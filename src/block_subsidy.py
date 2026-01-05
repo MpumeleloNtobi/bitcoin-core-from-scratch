@@ -4,8 +4,8 @@ def get_block_subsidy(block_height):
 
     if block_height < 0:
         raise ValueError("Invalid: negative height")
-    elif block_height < 210000: 
-        return 5000000000
+    elif block_height < HALVING_INTERVAL: 
+        return INITIAL_BLOCK_SUBSIDY
         
     halving_count = block_height // HALVING_INTERVAL # Floor division
     subsidy = INITIAL_BLOCK_SUBSIDY / (2 ** halving_count)
