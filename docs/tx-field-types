@@ -1,0 +1,30 @@
+Types of Fields in a Transaction 
+--------------------------------
+
+This is one of the most important subject when learning about Bitcoin transactions. Understanding the internals of a Bitcoin transaction is one of the foundational knowledge for Bitcoin developers. 
+
+Bitcoin transactions are serialised before they are transmitted in the network. The serialisation is for compatility with communication technology and is not meant to be human readable. However, since this is all in the service of the human and the work is done by the system then the system needs to be able to cater for both. Serialisation is the process which convert the data into a representation of the data which is suitable and optimised for the system. The order side of the token is a json representation of the data which is meant to be optimised for human readability. 
+
+The data is converted between the two representation via the following processes:
+- json data -> [serialisation] -> serial data
+- serial data -> [parsing] -> json data
+
+In order to be able to understand everything above understanding the types of fields in a transaction is key.
+
+Let's get into it:
+- There are three types of fields in a Bitcoin transaction 
+    - Fixed size
+        - This is a field with a preset number of bytes
+    - Variable size
+        - This is a field without a preset number of bytes 
+        - Is prepended by some field length data indicating the number of bytes being provided into the field as an input + the number of bytes in the representing the lenght of the data
+    - Compact Size
+        - This is an unconventional type which operates in a way which is unfamiliar to many people (I had never heard of this until now that I am embarking on my Bitcoin development journey
+        - This can be made a single byte at the minimum and four bytes maximum 
+        - The first byte determines the number of bytes in the field and provides information on how to determine the size of the field 
+        - The first byte can sometimes represent the number of bytes in itself 
+        - First byte
+            - 0-fc (0-252)  -> 1 byte
+            - fd (253)      -> 2 bytes
+            - fe (254)      -> 3 bytes 
+            - ff (255)      -> 4 bytes
